@@ -11,5 +11,10 @@ namespace BinaryMessageEncodingScheme.Codec.Utils
             Array.Copy(array2, 0, result, array1.Length, array2.Length);
             return result;
         }
+
+        public static string ToStringValue(this byte[] bytes)
+        {
+            return System.Text.Encoding.ASCII.GetString(bytes);
+        }
     }
 }
