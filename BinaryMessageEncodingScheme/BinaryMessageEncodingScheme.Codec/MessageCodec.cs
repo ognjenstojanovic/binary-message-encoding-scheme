@@ -17,6 +17,7 @@ namespace BinaryMessageEncodingScheme.Codec
             var (headers, currentIndex) = DecodeHeaders(data);
 
             var payloadSeparator = headers.GetValueOrDefault(Constants.PayloadSeparatorHeaderName);
+            headers.Remove(Constants.PayloadSeparatorHeaderName);
 
             var payload = DecodePayload(data, currentIndex, payloadSeparator);
 
@@ -149,7 +150,7 @@ namespace BinaryMessageEncodingScheme.Codec
 
         private byte[] EncodeHeaders(Dictionary<string, string> headers, byte[] payloadSeparator)
         {
-            if (headers.Count > Constants.MaxNumberOfHeaders)
+            if (headers.Count > Constants.MaxNumberOfHeaders - 1)
             {
                 throw new EncodingException($"Number of headers can't be bigger than {Constants.MaxNumberOfHeaders - 1}");
             }

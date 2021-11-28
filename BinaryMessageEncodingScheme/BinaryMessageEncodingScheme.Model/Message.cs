@@ -26,7 +26,7 @@ namespace BinaryMessageEncodingScheme.Model
             stringBuilder.AppendLine("Payload:");
             stringBuilder.AppendLine(System.Text.Encoding.ASCII.GetString(Payload));
 
-            return stringBuilder.ToString()
+            return stringBuilder.ToString();
         }
     }
 }
