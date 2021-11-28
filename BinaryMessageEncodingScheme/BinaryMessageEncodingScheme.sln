@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryMessageEncodingScheme.Console", "BinaryMessageEncodingScheme.Console\BinaryMessageEncodingScheme.Console.csproj", "{836A4BA2-3B1B-4E77-9F24-A639646F8B25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryMessageEncodingScheme.Model", "BinaryMessageEncodingScheme.Model\BinaryMessageEncodingScheme.Model.csproj", "{B0DDDE68-C773-4BA5-A69B-5AF84D28FD21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryMessageEncodingScheme.Codec", "BinaryMessageEncodingScheme.Codec\BinaryMessageEncodingScheme.Codec.csproj", "{537355BD-C866-48B1-A726-DBA151B2D4FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{836A4BA2-3B1B-4E77-9F24-A639646F8B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{836A4BA2-3B1B-4E77-9F24-A639646F8B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{836A4BA2-3B1B-4E77-9F24-A639646F8B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DDDE68-C773-4BA5-A69B-5AF84D28FD21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DDDE68-C773-4BA5-A69B-5AF84D28FD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DDDE68-C773-4BA5-A69B-5AF84D28FD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DDDE68-C773-4BA5-A69B-5AF84D28FD21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537355BD-C866-48B1-A726-DBA151B2D4FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537355BD-C866-48B1-A726-DBA151B2D4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537355BD-C866-48B1-A726-DBA151B2D4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537355BD-C866-48B1-A726-DBA151B2D4FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
