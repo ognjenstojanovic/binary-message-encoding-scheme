@@ -37,7 +37,7 @@ namespace BinaryMessageEncodingScheme.Codec
 
             while (currentIndex < data.Length)
             {
-                currentValueBytes = currentValueBytes.Concat(new byte[data[currentIndex++]]);
+                currentValueBytes = currentValueBytes.Concat(new byte[] { data[currentIndex++] });
 
                 if (currentValueBytes.Length > Constants.MaxPayloadLength)
                 {
@@ -53,7 +53,7 @@ namespace BinaryMessageEncodingScheme.Codec
                 }
                 else if (currentValueString.EndsWith(payloadSeparator) && payloadReadStarted)
                 {
-                    payload = currentValueBytes;
+                    payload = currentValueString.Substring(0, currentValueString.Length - payloadSeparator.Length).ToByteArray();
                     break;
                 }
             }
@@ -82,7 +82,7 @@ namespace BinaryMessageEncodingScheme.Codec
                     throw new DecodingException($"Maximum number of headers is {Constants.MaxNumberOfHeaders}");
                 }
 
-                currentValueBytes = currentValueBytes.Concat(new byte[data[currentIndex++]]);
+                currentValueBytes = currentValueBytes.Concat(new byte[] { data[currentIndex++] });
 
                 var currentValueString = currentValueBytes.ToStringValue();
 
@@ -144,7 +144,7 @@ namespace BinaryMessageEncodingScheme.Codec
                 throw new EncodingException($"Payload can't be bigger than {Constants.MaxPayloadLength}");
             }
 
-            return payloadSeparator.Concat(payload).Concat(payload);
+            return payloadSeparator.Concat(payload).Concat(payloadSeparator);
         }
 
         private byte[] EncodeHeaders(Dictionary<string, string> headers, byte[] payloadSeparator)
@@ -172,7 +172,7 @@ namespace BinaryMessageEncodingScheme.Codec
                     throw new EncodingException($"Header value can't be bigger than {Constants.HeaderValueMaxLength} bytes");
                 }
 
-                result = result.Concat(ConstructHeader(headerValue, headerName));
+                result = result.Concat(ConstructHeader(headerName, headerValue));
             }
 
             result = result.Concat(ConstructFinalHeader(payloadSeparator));
